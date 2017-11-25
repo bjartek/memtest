@@ -3,10 +3,12 @@ Look at build.sh
 
 # Run
 
-## To run with normal heap initialization
+This program will allocate a 50Mb Off-Heap ByteBuffer, then it will loop and allocate chunks of 4Mb OnHeap.
+
+## To run with normal heap initialization XMX and XMS set to 256
 ./run.sh start 
 
-## To run with -XX:AlwayPreTouch
+## To run with -XX:AlwayPreTouch and XMX=XMS=256
 ./run.sh pretouch
 
 You can see the limits and current memory usage with docker stats

@@ -13,11 +13,12 @@ import java.util.concurrent.TimeUnit;
 public class App {
 
 	private static final int MB = 1024 * 1024;
+	private static ByteBuffer byteBuffer;
 
 
 	public static void main(String[] args) throws InterruptedException, NoSuchFieldException, IllegalAccessException {
 		List<byte[]> b = new ArrayList<byte[]>();
-		ByteBuffer byteBuffer = ByteBuffer.allocateDirect(MB * 50);
+		byteBuffer = ByteBuffer.allocateDirect(MB * 50);
 		MemoryMXBean memoryBean = ManagementFactory.getMemoryMXBean();
 		for (int i = 0; i < 128; i++) {
 			b.add(new byte[MB * 4]);
